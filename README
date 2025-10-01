@@ -1,3 +1,10 @@
+make
+tar -cf vmmon.tar vmmon-only
+tar -cf vmnet.tar vmnet-only
+sudo cp -v vmmon.tar vmnet.tar /usr/lib/vmware/modules/source/
+sudo vmware-modconfig --console --install-all
+
+
 This repository tracks patches needed to build VMware (Player and
 Workstation) host modules against recent kernels. As it focuses on recent
 kernels (older ones do not need patching), only vmmon and vmnet modules are
